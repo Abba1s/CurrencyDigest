@@ -35,7 +35,7 @@ const commentController = {
 
     return res.status(201).json({ msg: "Created Successfully !" });
   },
-  //_____________________________________DELETE COMMENT API_________________________________
+  //_____________________________________GET COMMENTS API_________________________________
   async getById(req, res, next) {
     const idSchema = JOI.object({
       id: JOI.string().regex(idRegex).required(),

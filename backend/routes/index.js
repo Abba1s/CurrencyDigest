@@ -5,12 +5,7 @@ const commentController = require("../controllers/commentController");
 const authMiddleware = require("../middlewares/auth");
 
 const router = express.Router();
-
-//test
-
-router.get("/test", (req, res) => {
-  res.json({ msg: "Hello" });
-});
+//_____________________________________________ ROUTES START_______________________________________________
 
 //_____________________________________________USER ROUTES_______________________________
 //register
@@ -37,6 +32,9 @@ router.delete("/blog/:id", authMiddleware, blogController.deleteBlogById);
 //_____________________________________________COMMENT ROUTES_______________________________
 //create comment
 router.post("/comment/create", authMiddleware, commentController.createComment);
+//getting all comments on blog Id
 router.get("/comment/:id", authMiddleware, commentController.getById);
+
+//_____________________________________________ ROUTES END_____________________________________________________
 
 module.exports = router;
